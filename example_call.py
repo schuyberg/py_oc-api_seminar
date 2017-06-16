@@ -17,19 +17,24 @@ itemId = '1.0222552'
 itemUrl = ocApiUrl+'/collections/'+collection+'/items/'+itemId+'?apiKey='+apiKey
 print('\n Get item: ' + itemUrl)
 
-itemJson = requests.get(itemUrl).json()
-print(json.dumps(itemJson, indent=4))
+itemData = requests.get(itemUrl)
+print(itemData.json())
 
-
-
-#GET LIST OF ITEMS
-# url to a list of items in a collection
-itemListUrl = ocApiUrl+'/collections/'+collection+'/items?apiKey='+apiKey
-print('\n Get items list: ' + itemListUrl)
-
-
-itemListJson = requests.get(itemListUrl).json()
-print(json.dumps(itemListJson, indent=4))
-
-# task 2: How many items are in this collection?
-print(len(itemListJson["data"]))
+# itemJson = requests.get(itemUrl).json()
+# print(json.dumps(itemJson, indent=4))
+#
+#
+#
+# #GET LIST OF ITEMS
+#
+# # url to a list of items in a collection
+# itemListUrl = ocApiUrl+'/collections/'+collection+'/items?apiKey='+apiKey
+# print('\n Get items list: ' + itemListUrl)
+#
+#
+# itemListJson = requests.get(itemListUrl).json()
+# print(json.dumps(itemListJson, indent=4))
+#
+# # task 2: How many items are in this collection?
+#
+# print(len(itemListJson["data"]))
