@@ -22,13 +22,15 @@ send basic GET and POST requests, and to receive and parse JSON responses.
 - GETting item metadata
     - Get the metadata from one item (basic GET request)
     - Combining requests: Get metadata from multiple items
-    - Analyzing Text with the Natural Language Toolkit
+- Analyzing Text with the Natural Language Toolkit (time permitting)
+    
+-- BREAK! --
+
 - The Search API: POSTing a search request
     - Keyword Search
     - Filtered Search
     - Aggregate Search Queries (Faceting)
-    - Visualize your results (time permitting)
-- Other APIs and ‘Where To Go From Here’
+- Visualize your results (time permitting)
 
 **Setup requirements**: 
 

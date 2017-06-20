@@ -16,19 +16,22 @@ harvesting data from open web APIs. It will provide an introduction to the key c
 gather data from UBC Library's Open Collections API using Python. You will learn how to structure and
 send basic GET and POST requests, and to receive and parse JSON responses.
 
-- What is an API? A Brief Overview
+- What is an API? A Brief Overview (20m)
     - Getting Started with the Open Collections API
     - Understanding JSON
-- GETting item metadata
+- GETting item metadata (45-1h)
     - Get the metadata from one item (basic GET request)
     - Combining requests: Get metadata from multiple items
-    - Analyzing Text with the Natural Language Toolkit
-- The Search API: POSTing a search request
+- Analyzing Text with the Natural Language Toolkit (time permitting) (30m)
+    
+-- BREAK! --
+
+- The Search API: POSTing a search request (1h)
     - Keyword Search
     - Filtered Search
     - Aggregate Search Queries (Faceting)
-    - Visualize your results (time permitting)
-- Other APIs and ‘Where To Go From Here’
+- Visualize your results (time permitting)
+
 
 **Setup requirements**: 
 
