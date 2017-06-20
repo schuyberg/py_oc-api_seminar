@@ -1,0 +1,34 @@
+{
+  "from": 0,
+  "size": 0,
+  "body": {
+    "query": {
+      "filtered": {
+        "query": {
+          "query_string": {
+            "default_operator": "AND",
+            "query": "*"
+          }
+        }
+      }
+    },
+    "aggregations": {
+      "creator": {
+        "terms": {
+          "field": "creator.raw",
+          "size": 200
+        }
+      }
+    },
+    "_source": [
+      "creator",
+      "scholarlyLevel",
+      "ubc.date.sort",
+      "subject",
+      "title",
+      "type"
+    ]
+  },
+  "index": "macmillan",
+  "search_type": "count"
+}

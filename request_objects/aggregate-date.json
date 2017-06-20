@@ -1,0 +1,35 @@
+{
+  "from": 0,
+  "size": 0,
+  "body": {
+    "query": {
+      "filtered": {
+        "query": {
+          "query_string": {
+            "default_operator": "AND",
+            "query": "*"
+          }
+        }
+      }
+    },
+    "aggregations": {
+      "date_hist": {
+        "date_histogram": {
+          "field": "ubc.date.sort",
+          "interval": "year",
+          "format": "yyyy-MM-dd"
+        }
+      }
+    },
+    "_source": [
+      "creator",
+      "scholarlyLevel",
+      "ubc.date.sort",
+      "subject",
+      "title",
+      "type"
+    ]
+  },
+  "index": "macmillan",
+  "search_type": "count"
+}

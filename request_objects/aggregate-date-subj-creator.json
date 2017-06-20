@@ -1,0 +1,65 @@
+{
+  "from": 0,
+  "size": 0,
+  "body": {
+    "query": {
+      "filtered": {
+        "query": {
+          "query_string": {
+            "default_operator": "AND",
+            "query": "*"
+          }
+        },
+        "filter": {
+          "bool": {
+            "must": []
+          }
+        }
+      }
+    },
+    "aggregations": {
+      "date_hist": {
+        "date_histogram": {
+          "field": "ubc.date.sort",
+          "interval": "year",
+          "format": "yyyy-MM-dd"
+        },
+         "aggregations" : {
+            "subject": {
+              "terms": {
+                "field": "subject.raw",
+                "size": 60
+              }
+            },
+            "creator": {
+              "terms": {
+                "field": "creator.raw",
+                "size": 60
+              }
+            }
+         }
+      }
+    },
+    "_source": [
+      "affiliation",
+      "campus",
+      "creator",
+      "dateAvailable",
+      "degree",
+      "description",
+      "genre",
+      "geographicLocation",
+      "program",
+      "scholarlyLevel",
+      "ubc.date.sort",
+      "subject",
+      "title",
+      "type",
+      "ubc.internal.handle",
+      "ubc.internal.provenance.nick",
+      "ubc.internal.repo"
+    ]
+  },
+  "index": "macmillan",
+  "search_type": "count"
+}

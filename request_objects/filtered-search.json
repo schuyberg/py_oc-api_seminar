@@ -1,0 +1,51 @@
+{
+  "from": 0,
+  "size": 10,
+  "body": {
+    "sort": {
+      "_score": {
+        "order": "desc"
+      }
+    },
+    "fields": [
+      "creator",
+      "description",
+      "subject",
+      "title"
+    ],
+    "query": {
+        "filtered": {
+            "query": {
+                "query_string": {
+                    "default_operator": "AND",
+                    "query": "gold"
+                }
+            },
+            "filter": {
+              "bool": {
+                "must": [
+                  {
+                    "terms": {
+                      "genre.raw": [
+                        "Report"
+                      ],
+                      "execution": "and"
+                    }
+                  },
+                  {
+                    "range": {
+                      "ubc.date.sort": {
+                        "gte": -755828599190,
+                        "lte": 396718367610
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+        }
+    }
+  },
+  "index": "oc",
+  "type": "object"
+}
