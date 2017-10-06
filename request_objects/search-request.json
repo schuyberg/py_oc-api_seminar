@@ -1,34 +1,29 @@
 {
   "from": 0,
-  "size": 0,
+  "size": 10,
   "body": {
+    "sort": {
+      "_score": {
+        "order": "desc"
+      }
+    },
+    "fields": [
+      "creator",
+      "description",
+      "subject",
+      "title"
+    ],
     "query": {
       "filtered": {
         "query": {
           "query_string": {
             "default_operator": "AND",
-            "query": "*"
+            "query": "dogs"
           }
         }
       }
-    },
-    "aggregations": {
-      "creator": {
-        "terms": {
-          "field": "creator.raw",
-          "size": 200
-        }
-      }
-    },
-    "_source": [
-      "creator",
-      "scholarlyLevel",
-      "ubc.date.sort",
-      "subject",
-      "title",
-      "type"
-    ]
+    }
   },
-  "index": "macmillan",
-  "search_type": "count"
+  "index": "oc",
+  "type": "object"
 }
